@@ -8,7 +8,7 @@ local action_set = require "telescope.actions.set"
 local action_state = require "telescope.actions.state"
 
 local function reload_theme(name)
-  require("nvconfig").ui.theme = name
+  require("nvconfig").base46.theme = name
   require("base46").load_all_highlights()
   vim.api.nvim_exec_autocmds("User", { pattern = "NvChadThemeReload" })
 end
@@ -31,7 +31,7 @@ local function switcher()
 
   -- our picker function: colors
   local picker = pickers.new {
-    prompt_title = "󱥚 Set NvChad Theme",
+    prompt_title = "󱥚 Set Theme",
     previewer = previewer,
     finder = finders.new_table {
       results = require("nvchad.utils").list_themes(),
@@ -63,7 +63,7 @@ local function switcher()
       ------------ save theme to chadrc on enter ----------------
       actions.select_default:replace(function()
         if action_state.get_selected_entry() then
-          local old_theme = dofile(vim.fn.stdpath "config" .. "/lua/chadrc.lua").ui.theme
+          local old_theme = dofile(vim.fn.stdpath "data" .. "/lazy/ui/lua/chadrc.lua").base46.theme
           local selected_theme = action_state.get_selected_entry()[1]
 
           require("nvchad.utils").replace_word(old_theme, selected_theme)

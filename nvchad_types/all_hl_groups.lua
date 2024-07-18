@@ -1,7 +1,7 @@
 ---@meta
 
 --- Don't edit or require this file
-error("Requring a meta file")
+error "Requring a meta file"
 
 ---@class HLGroups
 ---@field healthSuccess Base46HLGroups # highlight group for defaults
@@ -1268,3 +1268,5 @@ error("Requring a meta file")
 ---| "'trouble'"
 ---| "'vim-illuminate'"
 ---| "'whichkey'"
+---| "'markview'"
+---| "'dez'"

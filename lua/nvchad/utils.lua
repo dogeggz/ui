@@ -2,7 +2,7 @@ local M = {}
 local fn = vim.fn
 
 M.list_themes = function()
-  local default_themes = vim.fn.readdir(vim.fn.stdpath "data" .. "/lazy/base46/lua/base46/themes")
+  local default_themes = vim.fn.readdir(fn.stdpath "data" .. "/lazy/base46/lua/base46/themes")
   local custom_themes = vim.loop.fs_stat(fn.stdpath "config" .. "/lua/themes")
 
   if custom_themes and custom_themes.type == "directory" then
@@ -20,7 +20,7 @@ M.list_themes = function()
 end
 
 M.replace_word = function(old, new)
-  local chadrc = vim.fn.stdpath "config" .. "/lua/" .. "chadrc.lua"
+  local chadrc = vim.fn.stdpath "data" .. "/lazy/ui/lua/chadrc.lua"
   local file = io.open(chadrc, "r")
   local added_pattern = string.gsub(old, "-", "%%-") -- add % before - if exists
   local new_content = file:read("*all"):gsub(added_pattern, new)

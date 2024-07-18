@@ -6,9 +6,45 @@
 ---@field lsp? NvLspConfig
 ---@field term? TermConfig
 ---@field cheatsheet? NvCheatsheetConfig
+---@field my_pallete? MyPalleteConfig
+
+---@class MyPalleteConfig
+---@field base00 string
+---@field base01 string
+---@field base02 string
+---@field base03 string
+---@field white string
+---@field blue_dark string
+---@field blue string
+---@field blue_light string
+---@field red_dark string
+---@field red string
+---@field red_light string
+---@field violet_dark string
+---@field violet string
+---@field violet_light string
+---@field green_dark string
+---@field green string
+---@field green_light string
+---@field magenta_dark string
+---@field magenta string
+---@field magenta_light string
+---@field gray_dark string
+---@field gray string
+---@field gray_light string
+---@field cyan_dark string
+---@field cyan string
+---@field cyan_light string
+---@field yellow_dark string
+---@field yellow string
+---@field yellow_light string
+---@field orange_dark string
+---@field orange string
+---@field orange_light string
 
 ---@class Base46Config
 ---@field integrations? Base46Integrations[]
+---@field theme? ThemeName
 
 --- UI related configuration
 --- e.g. colorschemes, statusline themes, cmp themes, dashboard, some LSP ui related
@@ -78,7 +114,7 @@
 ---@field theme? '"default"'|'"vscode"'|'"vscode_colored"'|'"minimal"'
 --- Separator style for NvChad Statusline
 ---     - Only when the *theme* is `minimal`, "round" or "block" will be having effect
----@field separator_style? '"default"'|'"round"'|'"block"'|'"arrow"'
+---@field separator_style? '"default"'|'"round"'|'"block"'|'"arrow"'|'"slash"'
 --- The list of module names from default modules + your modules
 --- Check https://github.com/NvChad/ui/blob/v2.5/lua/nvchad/stl/utils.lua#L12 for the modules of each statusline theme
 ---@field order? string[]
